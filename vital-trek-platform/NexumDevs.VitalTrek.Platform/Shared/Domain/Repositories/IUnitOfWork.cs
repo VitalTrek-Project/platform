@@ -1,4 +1,4 @@
-namespace DefaultNamespace;
+namespace NexumDevs.VitalTrek.Platform.Shared.Domain.Repositories;
 
 /// <summary>
 ///     Unit of work interface for all repositories
