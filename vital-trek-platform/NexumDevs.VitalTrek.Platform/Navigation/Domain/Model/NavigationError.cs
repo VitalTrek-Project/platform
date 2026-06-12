@@ -6,6 +6,7 @@ public enum NavigationError
     ExpeditionNotFound,
     ExperienceNotFound,
     ProgressNotLoaded,
+    WeatherNotLoaded,
     OperationCancelled,
     DatabaseError,
     InternalServerError

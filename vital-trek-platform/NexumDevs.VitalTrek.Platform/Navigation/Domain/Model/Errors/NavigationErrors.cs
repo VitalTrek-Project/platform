@@ -12,4 +12,7 @@ public static class NavigationErrors
     
     public static readonly Error ProgressLoadingFailed =
         new("Navigation.ProgressLoadingFailed", "An error occurred while loading the progress.");
+    
+    public static readonly Error WeatherLoadingFailed =
+        new("Navigation.WeatherLoadingFailed", "An error occurred while loading the weather.");
 }
