@@ -1,3 +1,5 @@
+using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Commands;
+
 namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregates;
 
 public class Weather
@@ -13,6 +15,12 @@ public class Weather
         Condition = condition;
         Humidity = humidity;
         WindSpeedKmh = windSpeedKmh;
+    }
+
+    public Weather(CreateWeatherCommand command) : this(
+        command.temperatureCelsius, command.condition, command.humidity, command.windSpeedKmh)
+    {
+        
     }
 
     private Weather()
