@@ -2,7 +2,7 @@
 
 namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregates;
 
-public partial class Expedition : IAuditableEntity
+public partial class ExperienceAudit : IAuditableEntity
 {
     public DateTimeOffset? CreatedAt { get; set; }
     public DateTimeOffset? UpdatedAt { get; set; }

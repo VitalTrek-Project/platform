@@ -4,6 +4,7 @@ public enum NavigationError
 {
     None,
     ExpeditionNotFound,
+    ExperienceNotFound,
     OperationCancelled,
     DatabaseError,
     InternalServerError
