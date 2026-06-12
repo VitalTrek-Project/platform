@@ -9,4 +9,7 @@ public static class NavigationErrors
     
     public static readonly Error ExperienceCreationFailed =
         new("Navigation.ExperienceCreationFailed", "An error occurred while creating the experience.");
+    
+    public static readonly Error ProgressLoadingFailed =
+        new("Navigation.ProgressLoadingFailed", "An error occurred while loading the progress.");
 }
