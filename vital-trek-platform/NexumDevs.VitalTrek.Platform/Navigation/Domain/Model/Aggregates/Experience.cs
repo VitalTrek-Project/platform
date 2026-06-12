@@ -1,4 +1,5 @@
-﻿using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.ValueObjects;
+﻿using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Commands;
+using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.ValueObjects;
 
 namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregates;
 
@@ -17,6 +18,12 @@ public partial class Experience
         Note = note;
         MediaURL = mediaURL;
         CreatedAt = createdAt;
+    }
+    
+    public Experience(CreateExperienceCommand command) : this(
+        command.expeditionId, command.touristId, command.note, command.mediaURL, command.createdAt)
+    {
+        
     }
 
     private Experience()
