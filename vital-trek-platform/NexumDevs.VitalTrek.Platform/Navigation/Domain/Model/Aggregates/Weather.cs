@@ -28,6 +28,8 @@ public class Weather
         throw new NotImplementedException();
     }
     
+    public int Id { get; }
+    
     public double TemperatureCelsius { get; private set; }
     public string Condition { get; private set; }
     public double Humidity { get; private set; }

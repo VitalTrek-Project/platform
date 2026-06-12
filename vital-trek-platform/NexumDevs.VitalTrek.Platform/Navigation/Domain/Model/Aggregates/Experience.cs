@@ -31,6 +31,8 @@ public partial class Experience
         throw new NotImplementedException();
     }
     
+    public int Id { get; }
+    
     public ExpeditionId  ExpeditionID { get; private set; }
     public TouristId TouristID { get; private set; }
     public NoteItem Note { get; private set; }

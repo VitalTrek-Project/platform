@@ -26,6 +26,8 @@ public partial class Progress
         throw new NotImplementedException();
     }
     
+    public int Id { get; }
+    
     public int CompletedCheckpoints { get; private set; }
     public int TotalCheckpoints { get; private set; }
     public double Percentage { get; private set; }

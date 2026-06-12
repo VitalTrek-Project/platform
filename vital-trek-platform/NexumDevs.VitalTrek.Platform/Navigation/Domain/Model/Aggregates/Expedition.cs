@@ -31,6 +31,8 @@ public partial class Expedition
         throw new NotImplementedException();
     }
     
+    public int Id { get; }
+    
     public TourId TourID { get; private set; }
     public GuideId GuideID { get; private set; }
     public string Status { get; private set; }
