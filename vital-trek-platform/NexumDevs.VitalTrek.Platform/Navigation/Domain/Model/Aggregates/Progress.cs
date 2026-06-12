@@ -1,4 +1,4 @@
-using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.ValueObjects;
+using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Commands;
 
 namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregates;
 
@@ -13,6 +13,12 @@ public partial class Progress
         CompletedCheckpoints = completedCheckpoints;
         TotalCheckpoints = totalCheckpoints;
         Percentage = percentage;
+    }
+
+    public Progress(CreateProgressCommand command) : this(
+        command.completedCheckpoints, command.totalCheckpoints, command.percentage)
+    {
+        
     }
 
     private Progress()
