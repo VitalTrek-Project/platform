@@ -6,7 +6,7 @@ namespace NexumDevs.VitalTrek.Platform.Monitoring.Domain.Repositories;
 public interface IIncidentRepository : IBaseRepository<Incident>
 {
     
-    Task<IEnumerable<Incident>> FindByCategoryIdAsync(int incidentId, CancellationToken cancellationToken);
+    Task<IEnumerable<Incident>> FindByExpeditionIdAsync(int expeditionId, CancellationToken cancellationToken);
 
     //Task<bool> ExistsByTitleAsync(string title, CancellationToken cancellationToken);
 }
