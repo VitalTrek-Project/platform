@@ -1,6 +1,6 @@
 ﻿using NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.ValueObjects;
 
-namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregate;
+namespace NexumDevs.VitalTrek.Platform.Navigation.Domain.Model.Aggregates;
 
 public partial class Expedition
 {
