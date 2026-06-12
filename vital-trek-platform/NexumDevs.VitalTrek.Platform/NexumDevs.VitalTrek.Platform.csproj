@@ -43,8 +43,4 @@
         </EmbeddedResource>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Navigation\Domain\Model\Aggregates\" />
-    </ItemGroup>
-
 </Project>
