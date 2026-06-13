@@ -5,36 +5,33 @@ namespace NexumDevs.VitalTrek.Platform.Monitoring.Domain.Model.Aggregate;
 
 public partial class Incident 
 {
-    public Incident(
-        int expeditionId, 
-        int reportedBy, 
-        string description,
-        string severity,
-        string status,
-        string reportedAt
-    ) : this()
+    public Incident()
+       
     {
-        ExpeditionId = expeditionId;
-        ReportedBy = reportedBy;
-        Description = description;
-        Severity = severity;
-        Status = status;
-        ReportedAt = reportedAt;
+        ExpeditionId = 0;
+        ReportedBy = 0;
+        Description = null!;
+        Severity = null!;
+        Status = null!;
+        ReportedAt = null!;
 
     }
 
-    public Incident(CreateIncidentCommand command) : this(command.ExpeditionId, command.ReportedBy,
-        command.Description, command.Severity, command.Status, command.ReportedAt)
+    public Incident(CreateIncidentCommand command) 
     {
-        
+        ArgumentNullException.ThrowIfNull(command);
+        ExpeditionId = command.ExpeditionId;
+        ReportedBy = command.ReportedBy;
+        Description = command.Description;
+        Severity = command.Severity;
+        Status = command.Status;
+        ReportedAt = command.ReportedAt;
+
     }
 
-    private Incident()
-    {
-        throw new NotImplementedException();
-    }
 
-    public int Id { get; }
+
+    public int Id { get; private set; }
 
     public int ExpeditionId { get; private set; }
     public int ReportedBy { get; private set; }

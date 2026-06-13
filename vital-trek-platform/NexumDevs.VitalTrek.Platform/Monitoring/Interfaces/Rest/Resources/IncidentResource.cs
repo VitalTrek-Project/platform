@@ -1,7 +1,7 @@
 namespace NexumDevs.VitalTrek.Platform.Monitoring.Interfaces.Rest.Resources;
 
 public record IncidentResource(
-    int expeditionId,
+    int Id,
     int ExpeditionId,
     int ReportedBy,
     string Description,

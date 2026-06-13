@@ -1,4 +1,9 @@
-
+using NexumDevs.VitalTrek.Platform.Monitoring.Application.CommandServices;
+using NexumDevs.VitalTrek.Platform.Monitoring.Application.Internal.CommandServices;
+using NexumDevs.VitalTrek.Platform.Monitoring.Application.Internal.QueryServices;
+using NexumDevs.VitalTrek.Platform.Monitoring.Application.QueryServices;
+using NexumDevs.VitalTrek.Platform.Monitoring.Domain.Repositories;
+using NexumDevs.VitalTrek.Platform.Monitoring.Infrastructure.Persistence.EntityFrameworkCore.Repositories;
 using NexumDevs.VitalTrek.Platform.Resources.Errors;
 using NexumDevs.VitalTrek.Platform.Resources.Shared;
 using NexumDevs.VitalTrek.Platform.Shared.Domain.Repositories;
@@ -113,6 +118,11 @@ builder.Services.AddSwaggerGen(options =>
 
 // Shared Bounded Context
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Monitoring Bounded Context
+builder.Services.AddScoped<IIncidentRepository, IncidentRepository>();
+builder.Services.AddScoped<IIncidentCommandService, IncidentCommandService>();
+builder.Services.AddScoped<IIncidentQueryService, IncidentQueryService>();
 
 
 

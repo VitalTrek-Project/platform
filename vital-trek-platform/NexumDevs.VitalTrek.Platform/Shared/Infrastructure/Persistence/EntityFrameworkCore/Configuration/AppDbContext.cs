@@ -1,4 +1,5 @@
-
+using NexumDevs.VitalTrek.Platform.Monitoring.Domain.Model.Aggregate;
+using NexumDevs.VitalTrek.Platform.Monitoring.Domain.Model.ValueObjects;
 using NexumDevs.VitalTrek.Platform.Shared.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
 using NexumDevs.VitalTrek.Platform.Shared.Infrastructure.Persistence.EntityFrameworkCore.Interceptors;
 using Microsoft.EntityFrameworkCore;
@@ -34,5 +35,37 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
         base.OnModelCreating(builder);
 
+        builder.Entity<Incident>().HasKey(i => i.Id);
+        builder.Entity<Incident>().Property(i => i.Id).IsRequired().ValueGeneratedOnAdd();
+
+        builder.Entity<Incident>()
+            .Property(i => i.ExpeditionId)
+            .IsRequired();
+
+        builder.Entity<Incident>()
+            .Property(i => i.ReportedBy)
+            .IsRequired();
+
+        builder.Entity<Incident>()
+            .Property(i => i.Description)
+            .IsRequired()
+            .HasMaxLength(500);
+
+        builder.Entity<Incident>()
+            .Property(i => i.Severity)
+            .IsRequired()
+            .HasMaxLength(50);
+
+        builder.Entity<Incident>()
+            .Property(i => i.Status)
+            .IsRequired()
+            .HasMaxLength(50);
+
+        builder.Entity<Incident>()
+            .Property(i => i.ReportedAt)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.UseSnakeCaseNamingConvention();
     }
 }

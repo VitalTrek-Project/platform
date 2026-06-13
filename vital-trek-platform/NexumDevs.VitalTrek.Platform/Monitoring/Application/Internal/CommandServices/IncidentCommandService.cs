@@ -12,27 +12,28 @@ using Microsoft.Extensions.Localization;
 namespace NexumDevs.VitalTrek.Platform.Monitoring.Application.Internal.CommandServices;
 
 public class IncidentCommandService(
-IIncidentRepository incidentRepository,
-    
+    IIncidentRepository incidentRepository,
     IUnitOfWork unitOfWork,
-    IStringLocalizer<ErrorMessages> localizer) // Inject IStringLocalizer
+    IStringLocalizer<ErrorMessages> localizer, // Inject IStringLocalizer
+    ILogger<IncidentCommandService> logger)
     : IIncidentCommandService
 {
     private readonly IStringLocalizer<ErrorMessages> _localizer = localizer;
+   
 
     
 
     /// <inheritdoc />
     public async Task<Result<Incident>> Handle(CreateIncidentCommand command, CancellationToken cancellationToken)
     {
+        
        
-      
         var incident = new Incident(command);
         try
         {
             await incidentRepository.AddAsync(incident, cancellationToken);
             await unitOfWork.CompleteAsync(cancellationToken);
-            
+          
             return Result<Incident>.Success(incident);
         }
         catch (OperationCanceledException)
